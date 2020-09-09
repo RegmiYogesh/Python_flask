@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Yogesh Regmi,Geomatics Family">
+    <title>Geomatics</title>
+
+  
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/cover.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/form.css')}}">
+    
+
+    <style>
+      body {
+        background-image: url('/static/lmg/Final.jpg');
+        background-repeat: no-repeat;
+        background-size: 175%;
+        
+
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      
+    </style>
+  </head>
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h2 class="masthead-brand"><img class="rounded-circle" src="/static/lmg/Logo.jpg" width="50" height="50">eomatics</h2>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" role="button" onclick="openForm()">Home</a>
+        <a class="nav-link" href="#"></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">About Us</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="https://ioepas.edu.np">Pashchimanchal Campus</a>
+            <a class="dropdown-item" href="#">Geomatics Engineering</a>
+            <a class="dropdown-item" href="https://www.esri.com/arcgis-blog/products/product/analytics/how-to-perform-spatial-analysis/">Spatial Data And Spatial Analysis</a>
+            <a class="dropdown-item" href="https://facebook.com/wrc.cssgs/posts/?ref=page_internal&mt_nav=0">Centre For Space Science And Geomatics Engineering</a>
+          </div>
+        </li>
+        <a class="nav-link" href="#"></a>
+        <a class="nav-link" href="#"></a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Organizations</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+            <a class="dropdown-item" href="http://ioegesan.org/?i=1">GESAN(IOE TU Pashchimanchal Campus)</a>
+            <a class="dropdown-item" href="https://facebook.com/geomaticsengineeringsociety/">GES(Kathmandu University)</a>
+          </div>
+        </li>
+        <a class="nav-link" href="#"></a>
+        <a class="nav-link" role="button" onclick="openForm1()">Login</a>
+        <button class="open-button" onclick="opentable()">Database</button>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <h1 class="cover-heading">Spatial Analysis</h1>
+    <p class="lead">Spatial analyis is the process in which you model problem geographically,drive result by computer processing, and then explore and examine those result.</p>
+    <p class="lead">
+      <a href="https://www.esri.com/arcgis-blog/products/product/analytics/how-to-perform-spatial-analysis/" class="btn btn-secondary">Learn more</a>
+    </p>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <div class="inner">
+      <p>Spatial Analysis Site, by <a href="https://facebook.com/profile.php?id=100010042008744&ref=content_filter">@yogu</a>.</p>
+    </div>
+  </footer>
+</div>
+<div style="display: none;position: absolute;bottom: 0;right: 15px;border: none;z-index: 9;margin-right: 500px;margin-bottom: 150px;" id="myForm">
+  <form action="/" method="POST" class="form-container">
+  <h3> Please Login First!</h3>
+  <label for="email"><b>Email</b></label>
+  <input type="text" placeholder="Enter Email" name="email" id="email" required>
+  <label for="psw"><b>Name,Faculty and Campus</b></label>
+  <input type="text" placeholder="Yogesh Regmi, Geomatics, WRC" name="psw" id="password" required>
+  <label><p>If you don't know us please <strong>Close</strong> and Visit About Us! before <strong>Login</strong></p></label>
+  <button type="submit" class="btn">Login</button>
+  <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<div class="form-popup" id="myForm1">
+  <form action="/" method="POST" class="form-container">
+  <h2> Login Please!</h2>
+  <label for="email"><b>Email</b></label>
+  <input type="text" placeholder="Enter Email" name="email" id="email" required>
+  <label for="psw"><b>Name,Faculty and Campus</b></label>
+  <input type="text" placeholder="Yogesh Regmi, Geomatics, WRC" name="psw" id="password" required>
+  <button type="submit" class="btn">Login</button>
+  <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<div class="table-popup" id="table">
+<button class="btn btn-danger" style="margin-bottom: 10px;" onclick="closetable()">Close</button>
+<div style="overflow-y: auto;height: 300px;">
+<table class="table table-hover table-dark" >
+  <thead class="thead-dark">
+  <tr>
+    <th><b>id</b></th>
+    <th><b>Email</b></th>
+    <th><b>Name and College</b></th>
+    <th><b>Login Date</b></th>
+    <th><b>Action</b></th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for task in tasks %}
+  <tr>
+    <td>{{task.id}}</td>
+    <td>{{task.email}}</td>
+    <td>{{task.password}}</td>
+    <td>{{task.date_created.date()}}</td>
+    <td><a href="/delete/{{task.id}}">Delete</a></td>
+    
+  </tr>
+  {% endfor %}
+  </tbody>
+</div>
+</table>
+</div>
+<script>
+  b=0;
+function openForm1() {
+  if (b<=0){
+  document.getElementById("myForm1").style.display="block";
+  }
+  else{
+    document.location.href="/home";
+  }
+}
+function openForm(){
+  document.getElementById("myForm").style.display="block";
+  b++;
+}
+ 
+function closeForm() {
+  document.getElementById("myForm").style.display="none";
+  b--;
+}
+function opentable(){
+  a=prompt('Enter the Superuser Code:')
+  if (a=='regmi12345'){
+  document.getElementById("table").style.display="block";
+  }
+  else{
+    alert('You are not authorized person to handle database')
+  }
+}
+function closetable() {
+  document.getElementById("table").style.display="none";
+}
+</script>
+<script src="/static/js/yogesh.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/static/js/yogesh.js"><\/script>')</script><script src="/static/js/bootstrap.bundle.js"></script></body>
+</body>
+</html>
